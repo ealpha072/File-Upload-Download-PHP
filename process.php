@@ -5,11 +5,7 @@
 
    try{
     $conn = new PDO($dsn,$username,$password);
-
-    //set PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully!!"."<br>";
-    //$conn->getAttribute(constant("PDO::ATTR_CONNECTION_STATUS"));
   }catch(Exception $e){
     echo "Connection failed ".$e->getMessage();
   }
@@ -38,7 +34,7 @@
           if(move_uploaded_file($file,$destination)){
             try {
                 //code...
-                $sql =$conn->prepare("INSERT INTO users(id, name, size, downloads) VALUES (1, '$filename', '$size', '0')");
+                $sql =$conn->prepare("INSERT INTO users(name, size, downloads) VALUES ( '$filename', '$size', '0')");
                 $sql->execute();
 
                 echo "Upload successfull!!!!!";
