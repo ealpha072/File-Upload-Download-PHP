@@ -1,3 +1,5 @@
+<?php require "process.php"; ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,14 +12,14 @@
 <body>
     <div class="container">
         <div class="form">
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <h3>Upload File</h3>
                 <div class="form-group">
                     <label for="upload">Upload file</label>
-                    <input type="file" class="form-control-file">
+                    <input type="file" class="form-control-file" name="myfile">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary">Upload</button>
+                    <button class="btn btn-primary" name="upload">Upload</button>
                 </div>
             </form>
         </div>
